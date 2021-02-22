@@ -1,27 +1,30 @@
 {
   "schemaVersion": 1,
-  "id": "nbttooltip",
+  "id": "betternbttooltip",
   "version": "${version}",
-  "name": "NBT Tooltip",
+  "name": "Better NBT Tooltip",
   "description": "Add a handy tooltip to items, showing NBT data",
   "authors": [
-    "Zabi94"
+    "Awakened Redstone"
   ],
   "contact": {
   },
 
   "license": "MIT",
-  "icon": "assets/minervahud/icon.png",
+  "icon": "assets/betternbttooltiip/icon.png",
   "mixins": [
     {
-      "config": "nbttooltip.client.json",
+      "config": "nbttooltip.mixins.json",
       "environment": "client"
     }
   ],
   "environment": "client",
   "entrypoints": {
     "client": [
-      "zabi.minecraft.nbttooltip.NBTTooltip"
+      "net.awakenedredstone.nbttooltip.NBTTooltip"
+    ],
+    "modmenu": [
+      "net.awakenedredstone.nbttooltip.ModMenuSupport"
     ]
   },
   "depends": {

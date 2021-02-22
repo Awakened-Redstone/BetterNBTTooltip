@@ -1,4 +1,4 @@
-package zabi.minecraft.nbttooltip;
+package net.awakenedredstone.nbttooltip.config;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,6 +19,8 @@ public class ModConfig {
 	public static boolean requiresf3;
 	public static boolean showDelimiters;
 	public static boolean compress;
+	public static boolean hybridRender;
+	public static int maxWidth;
 	public static int ticksBeforeScroll;
 	public static boolean ctrlSuppressesRest;
 	
@@ -35,6 +37,8 @@ public class ModConfig {
 //		System.out.println("Loading default config");
 		ModConfig.maxLinesShown = 10;
 		ModConfig.compress = false;
+		ModConfig.hybridRender = false;
+		ModConfig.maxWidth = 30;
 		ModConfig.requiresf3 = true;
 		ModConfig.showDelimiters = true;
 		ModConfig.showSeparator = true;
@@ -55,7 +59,7 @@ public class ModConfig {
 				try {
 //					System.out.println("Creating new config file");
 					configFile.createNewFile();
-					ConfigInstance def = new ConfigInstance(showSeparator, maxLinesShown, requiresf3, showDelimiters, compress, ticksBeforeScroll, ctrlSuppressesRest);
+					ConfigInstance def = new ConfigInstance(showSeparator, maxLinesShown, requiresf3, showDelimiters, compress, ticksBeforeScroll, ctrlSuppressesRest, hybridRender, maxWidth);
 					String json = config.toJson(def);
 					FileWriter writer = new FileWriter(configFile);
 					writer.write(json);
@@ -89,6 +93,8 @@ public class ModConfig {
 			ticksBeforeScroll = instance.ticksBeforeScroll;
 			maxLinesShown = instance.maxLinesShown;
 			compress = instance.compress;
+			hybridRender = instance.hybridRender;
+			maxWidth = instance.maxWidth;
 			requiresf3 = instance.requiresf3;
 			ctrlSuppressesRest = instance.ctrlSuppressesRest;
 			

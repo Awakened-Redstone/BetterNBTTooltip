@@ -1,5 +1,11 @@
 plugins {
-	id 'fabric-loom' version '0.4-SNAPSHOT'
+	id 'fabric-loom' version '0.5-SNAPSHOT'
+}
+
+repositories {
+	maven {
+		url 'https://masa.dy.fi/maven'
+	}
 }
 
 sourceCompatibility = 1.8
@@ -20,10 +26,8 @@ dependencies {
 	modImplementation("io.github.prospector:modmenu:${project.modmenu_version}") {
 		exclude module: "fabric-api"
 	}
-	modApi("me.shedaniel.cloth:config-2:${project.clothconfig_version}") {
-		exclude module: "fabric-api"
-	}
-	include "me.shedaniel.cloth:config-2:${project.clothconfig_version}"
+
+	modImplementation "fi.dy.masa.malilib:malilib-fabric-${project.minecraft_version}:${project.malilib_version}"
 }
 
 processResources {

@@ -1,5 +1,10 @@
 {
 	"nbttooltip.copied_to_clipboard": "Data copied to clipboard",
 	"nbttooltip.object_details": "Item: %s",
-	"nbttooltip.copy_failed": "Copy failed"
+	"nbttooltip.copy_failed": "Copy failed",
+	"nbttooltip.invalid_config": "Invalid configuration",
+	"nbttooltip.gui.title.configs": "NBT Tooltip configuration",
+	"nbttooltip.gui.button.config_gui.settings": "Settings",
+	"nbttooltip.gui.button.config_gui.hotkeys": "Hotkeys",
+	"nbttooltip.gui.button.config_gui.lists": "Lists"
 }
