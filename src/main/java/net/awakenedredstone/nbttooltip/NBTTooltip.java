@@ -73,7 +73,11 @@ public class NBTTooltip implements ClientModInitializer {
         if (ttip.size() > lines) {
             if (lines + line_scrolled > ttip.size()) line_scrolled = ttip.size() - 1;
             for (int i = 0; i < lines; i++) {
-                newttip.add(ttip.get(i + line_scrolled));
+                try {
+                    newttip.add(ttip.get(i + line_scrolled));
+                } catch (IndexOutOfBoundsException exception) {
+                    line_scrolled = ttip.size() - 1;
+                }
             }
         } else {
             line_scrolled = 0;
