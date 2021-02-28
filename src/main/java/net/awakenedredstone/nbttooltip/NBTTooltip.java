@@ -71,7 +71,7 @@ public class NBTTooltip implements ClientModInitializer {
             newttip.add(new LiteralText("- NBTTooltip -"));
         }
         if (ttip.size() > lines) {
-            if (lines + line_scrolled > ttip.size()) line_scrolled = ttip.size();
+            if (lines + line_scrolled > ttip.size()) line_scrolled = ttip.size() - 1;
             for (int i = 0; i < lines; i++) {
                 newttip.add(ttip.get(i + line_scrolled));
             }
